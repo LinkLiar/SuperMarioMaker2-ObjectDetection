@@ -38,7 +38,7 @@ def SendingImage():
     SuperMarioBro_PINK = (198, 80, 255)  # Pink
 
     SuperMarioBro3_Body = (178, 217, 255)
-    SuperMarioBro3_Rect = (31, 31, 31)
+    SuperMarioBro3_Rect = ((31, 31, 31), (231, 61, 18))
 
     # Red,(231, 61, 18),(209, 66, 34), (157, 81, 41), (132, 85, 74)(247, 57, 14),
     SuperMarioBro3_RED = ((231, 61, 18))
@@ -53,7 +53,7 @@ def SendingImage():
         start = cv2.getTickCount()
         result = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25,
                             interpolation=cv2.INTER_NEAREST)
-        mask = FilterColor(result, SuperMarioBro3_RED)
+        mask = FilterColor(result, SuperMarioBro3_Rect)
         end = cv2.getTickCount()
         during = (end - start) / cv2.getTickFrequency()
         cv2.imshow("Color Filter", mask)
