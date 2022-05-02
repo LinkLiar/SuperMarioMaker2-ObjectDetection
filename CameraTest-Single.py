@@ -6,6 +6,7 @@ from copy import deepcopy
 thread_lock = threading.Lock()
 thread_exit = False
 
+
 class myThread(threading.Thread):
     def __init__(self, camera_id, img_height, img_width):
         super(myThread, self).__init__()
@@ -31,11 +32,12 @@ class myThread(threading.Thread):
                 thread_exit = True
         cap.release()
 
+
 def main():
     global thread_exit
     camera_id = 0
-    img_height = 480
-    img_width = 640
+    img_height = 1080
+    img_width = 1920
     thread = myThread(camera_id, img_height, img_width)
     thread.start()
 
@@ -48,6 +50,7 @@ def main():
         if cv2.waitKey(1) & 0xFF == ord('q'):
             thread_exit = True
     thread.join()
+
 
 if __name__ == "__main__":
     main()
