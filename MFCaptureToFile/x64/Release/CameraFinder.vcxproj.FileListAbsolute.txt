@@ -1,1 +1,0 @@
-D:\Github\SuperMarioMaker2-ObjectDetection\MFCaptureToFile\x64\Release\CameraFinder.pyd
